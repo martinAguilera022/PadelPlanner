@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PadelPlanner</title>
+     <link rel="stylesheet" href="/style/style.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="./src/Padel-ICon-removebg-preview.png" alt="PadelPlanner">
+          </div>
+          <nav>
+            <ul>
+              <li><a href="#inicio">Inicio</a></li>
+              <li><a href="#torneos">Torneos</a></li>
+              <li><a href="#resultados">Resultados</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </nav>
+    </header>
+    <main>
+        <section class="crea-torneo">
+            <h2>Crea tu Torneo</h2>
+            <form id="crear-torneo">
+                <input type="text" name="categoria" placeholder="Categoria" required>
+                <input type="number" name="canchas" placeholder="Número de canchas" required>
+                <input type="number" name="parejas" placeholder="Cantidad de parejas" required>
+                <input type="number" id="cantidad-fechas" name="fechas" placeholder="Cantidad de fechas" required>
+                <input type="number" name="prom-partido" placeholder="Promedio tiempo por partido en MIN" required>
+                
+                
+                <button type="submit">Generar Torneo</button>
+            </form>
+        </section>
+        <section   class="fecha-torneo">
+            <form id="fechas-juego" >
+
+               
+            </form>
+
+
+        </section>
+        <section class="ingresar-parejas">
+            <h2>Ingresa las parejas</h2>
+            <form id="ingresa-jugador">
+               <div class="cargar-jugador">
+                <div class="nom-jugadores">
+                    <p>Nombre de Jugadores</p>
+                    <input type="text" name="nombre1" placeholder="Nombre y apellido del Jugador 1" required>
+                    <input type="text" name="nombre2" placeholder="Nombre y apellido del Jugador 2" required>
+                </div>
+        
+                <div class="fechas-disponible">
+                    <div>
+                        <p>Fecha 1</p>
+                        <label for="fecha-1"></label>
+                        <select name="fecha-1" id="fecha-1" required>
+                           
+                        </select>
+                        <label for="hora-inicio">De: </label>
+                        <input type="time" name="hora_inicio1" required>
+                        <label for="hora_fin">Hasta: </label>
+                        <input type="time" name="hora_fin1" required>
+                    </div>
+        
+                    <div>
+                        <p>Fecha 2</p>
+                        <label for="fecha-2"></label>
+                        <select name="fecha-2" id="fecha-2" required>
+                            <!-- Aquí se agregarán las opciones de fechas dinámicamente -->
+                        </select>
+                        <label for="hora-inicio2">De: </label>
+                        <input type="time" name="hora_inicio2" required>
+                        <label for="hora_fin2">Hasta: </label>
+                        <input type="time" name="hora_fin2" required>
+                    </div>
+                </div>
+               </div>
+        
+                <button type="submit">Cargar parejas</button>
+            </form>
+        </section>
+        <section class="tabla-jugadores">
+            <p>Lista de Jugadores</p>
+            <section id="grilla-jugadores" class="grilla-jugadores">
+               
+                <div class="header renglon-lista ">
+                    <p class="idJug ">ID</p>
+                    <p>Nombre de Jugadores</p>
+                    <p>Fechas disponible 1</p>
+                    <p>Fechas disponible 2</p>
+                    
+                </div>
+              
+            </section>
+        </section>
+    </main>
+    <footer></footer>
+    <script src="./js/index.js"></script>
+</body>
+</html>
