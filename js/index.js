@@ -44,7 +44,7 @@ function ingresarFechas(cantFechas) {
     for (let i = 1; i <= cantFechas; i++) {
         contenedorFechas.innerHTML += `
             <form id="fecha-form-${i}">
-                <p class="tit-fecha">Fecha ${i}</p>
+                <p class="tit-fecha">Ingresa cuando inicia el torneo</p>
                 <input type="date" name="fecha-${i}" placeholder="Fecha" required>
                 <label for ="desd-hora${i}" >Desde:</label>
                 <input id="desd-hora${i}" type="time" name="desd-hora-${i}" required>
@@ -69,6 +69,7 @@ function ingresarFechas(cantFechas) {
         cargarJugadores(datosPareja,cantFechas);
         console.log(listFechas);
         ingresaParejas(listFechas,cantFechas);
+        contenedorFechas.innerHTML = '';
     });
 }
 
