@@ -16,7 +16,7 @@ header {
     color: rgb(0, 0, 0);
   
     .logo img {
-      width: 150px;
+      width: 100px;
     }
   
     nav ul {
@@ -49,77 +49,11 @@ header {
     font-family: "Poppins";
     color: #ffffff;
     background-color: #000000;
-   .fechas-torneo{
-    display: flex;
-    flex-wrap: wrap;
-   }
-    section{
-        text-align: center;
-        padding: 40px;
-        .cargar-jugador{
-          display: flex;
-          flex-direction: row;
-          justify-content: center;
-          gap: 43px;
-
-          .nom-jugadores{
-            display: flex;
-            flex-direction: column;
-            width: 73%;
-            
-          }
-          button{
-            border-radius: 20px;
-            background-color: #ffffff;
-            font-family: "Poppins";
-            padding: 20px;
-            width: auto;
-        }
-        }
-        form{
-            display: flex;
-            flex-direction: column;
-            padding: 40px;
-            input{
-                background-color: #00000030;
-                margin: 5px;
-                border-radius: 20px;
-                padding: 5px;
-                font-family: "Poppins" ;
-                color: #ffffff;
-            }
-            select{
-              background-color: #000000;
-              color: #ffffff;
-              font-family: "Poppins";
-              padding: 10px;
-              border-radius: 20px;
-              option{
-                background-color: #000000;
-                border: 1px solid;
-              }
-            }
-            button{
-                border-radius: 20px;
-                background-color: #ffffff;
-                font-family: "Poppins";
-                padding: 20px;
-                width: auto;
-            }
-            .fechas-disponible{
-                display: flex;
-                justify-content: center;
-                gap: 43px;
-               
-                div{
-                    display: flex;
-                    flex-direction: column;
-                }
-            }
-        }
+    font-size: 15px;
     }
     .tabla-jugadores{
       justify-content: center;
+      font-size: 12px;
       .grilla-jugadores {
         display: flex;
         flex-direction: column;
@@ -135,13 +69,13 @@ header {
           height: 100%;
           p {
             border: 1px solid white;
-            padding: 10px;
+            padding: 1px;
             text-align: center;
-            width:40%;
+            width:100%;
             
             overflow: hidden; /* Oculta el contenido que desborda */
             text-overflow: ellipsis; /* Agrega puntos suspensivos si el texto es demasiado largo */
-            height: 100px;
+            height: 10%;
           }
           
       
@@ -160,4 +94,90 @@ header {
       
 
       }
-}
+    
+
+   
+
+    .fechas-torneo{
+      display: flex;
+      flex-wrap: wrap;
+     }
+      section{
+          text-align: center;
+          padding: 5px;
+          .cargar-jugador{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 10px;
+           
+            
+            
+            .nom-jugadores{
+              display: flex;
+              flex-direction: column;
+              width: 80%;
+              align-self: center;
+              
+            }
+            button{
+              border-radius: 20px;
+              background-color: #ffffff;
+              font-family: "Poppins";
+              padding: 20px;
+              width: auto;
+          }
+          }
+          
+          form{
+              display: flex;
+              flex-direction: column;
+              padding: 10px;
+              input{
+                  background-color: #00000030;
+                  margin: 5px;
+                  border-radius: 20px;
+                  padding: 5px;
+                  font-family: "Poppins" ;
+                  color: #ffffff;
+              }
+              select{
+                background-color: #000000;
+                color: #ffffff;
+                font-family: "Poppins";
+                padding: 10px;
+                border-radius: 20px;
+                option{
+                  background-color: #000000;
+                  border: 1px solid;
+                }
+              }
+              button{
+                  border-radius: 20px;
+                  background-color: #ffffff;
+                  font-family: "Poppins";
+                  padding: 20px;
+                  width: auto;
+              }
+              .fechas-disponible{
+                  display: flex;
+                  justify-content: center;
+                  gap: 43px;
+                 
+                  div{
+                      display: flex;
+                      flex-direction: column;
+                      p{
+                        margin-bottom: 5px;
+                      }
+                      
+                      }
+                  }
+              }
+          }
+
+          .subtitulo{
+            font-size: 15px;
+            color: #5f5e5e;
+            margin-bottom: 10px;
+          }

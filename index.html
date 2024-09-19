@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadelPlanner</title>
-     <link rel="stylesheet" href="./style/style.css">
+     <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <header>
@@ -21,9 +21,9 @@
           </nav>
     </header>
     <main>
-        <section class="crea-torneo">
+        <section id="crear-torneo" class="crea-torneo">
             <h2>Crea tu Torneo</h2>
-            <form id="crear-torneo">
+            <form >
                 <input type="text" name="categoria" placeholder="Categoria" required>
                 <input type="number" name="canchas" placeholder="Número de canchas" required>
                 <input type="number" name="parejas" placeholder="Cantidad de parejas" required>
@@ -45,41 +45,7 @@
         <section class="ingresar-parejas">
             <h2>Ingresa las parejas</h2>
             <form id="ingresa-jugador">
-               <div class="cargar-jugador">
-                <div class="nom-jugadores">
-                    <p>Nombre de Jugadores</p>
-                    <input type="text" name="nombre1" placeholder="Nombre y apellido del Jugador 1" required>
-                    <input type="text" name="nombre2" placeholder="Nombre y apellido del Jugador 2" required>
-                </div>
-        
-                <div class="fechas-disponible">
-                    <div>
-                        <p>Fecha 1</p>
-                        <label for="fecha-1"></label>
-                        <select name="fecha-1" id="fecha-1" required>
-                           
-                        </select>
-                        <label for="hora-inicio">De: </label>
-                        <input type="time" name="hora_inicio1" required>
-                        <label for="hora_fin">Hasta: </label>
-                        <input type="time" name="hora_fin1" required>
-                    </div>
-        
-                    <div>
-                        <p>Fecha 2</p>
-                        <label for="fecha-2"></label>
-                        <select name="fecha-2" id="fecha-2" required>
-                            <!-- Aquí se agregarán las opciones de fechas dinámicamente -->
-                        </select>
-                        <label for="hora-inicio2">De: </label>
-                        <input type="time" name="hora_inicio2" required>
-                        <label for="hora_fin2">Hasta: </label>
-                        <input type="time" name="hora_fin2" required>
-                    </div>
-                </div>
-               </div>
-        
-                <button type="submit">Cargar parejas</button>
+              
             </form>
         </section>
         <section class="tabla-jugadores">
@@ -88,9 +54,8 @@
                
                 <div class="header renglon-lista ">
                     <p class="idJug ">ID</p>
-                    <p>Nombre Jugadores</p>
-                    <p>Fechas disponible 1</p>
-                    <p>Fechas disponible 2</p>
+                    <p>Jugadores</p>
+                    
                     
                 </div>
               
