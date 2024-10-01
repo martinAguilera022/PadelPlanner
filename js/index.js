@@ -6,18 +6,21 @@ let horaComienzo = 999999999;
 
 let torneoData = capturarDatosTorneo();
 let horaTorneo = ingresarFecha();
+
 console.log(torneoData);
 console.log(horaTorneo);
 cargarJugadores();
+console.log(horaComienzo);
+
 
 function cargarJugadores(){
+    
     console.log("--JUGADORES--")
     for (let i = 0; i < torneoData.cantidadParejas; i++) {
-        ingresarJugadores(horaTorneo);
+        ingresarJugadores();
       
     }
 }
-
 
 
 // Función para capturar datos del torneo
@@ -45,7 +48,7 @@ function ingresarFecha() {
 }
 
 // Función para ingresar los jugadores y validar disponibilidad
-function ingresarJugadores(horaTorneo) {
+function ingresarJugadores() {
     let jugador1 = prompt("Ingrese el nombre del primer jugador:");
     let jugador2 = prompt("Ingrese el nombre del segundo jugador:");
 
@@ -56,8 +59,8 @@ function ingresarJugadores(horaTorneo) {
         if (horaTorneo.desdeHora <= desde && hasta <= horaTorneo.hastHora) {
             if (hasta - desde >= 3) {
                 alert("Disponibilidad aceptada.");
-                console.log("Jugador 1: "+jugador1+"/ Jugador 2: "+jugador2 + "/  Desde:"+ desde+" Hasta: "+ hasta);
-                break
+                console.log({jugador1,jugador2,desde,hasta});
+                return { jugador1,jugador2,desde,hasta }
             } else {
                 alert("Debe haber al menos 3 horas de disponibilidad. Intente de nuevo.");
             }
