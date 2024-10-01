@@ -2,7 +2,7 @@
 // Captura los datos del torneo
 
 
-let horaComienzo = 999999999;
+
 
 let torneoData = capturarDatosTorneo();
 let horaTorneo = ingresarFecha();
@@ -10,7 +10,7 @@ let horaTorneo = ingresarFecha();
 console.log(torneoData);
 console.log(horaTorneo);
 cargarJugadores();
-console.log(horaComienzo);
+
 
 
 function cargarJugadores(){
@@ -18,8 +18,9 @@ function cargarJugadores(){
     console.log("--JUGADORES--")
     for (let i = 0; i < torneoData.cantidadParejas; i++) {
         ingresarJugadores();
-      
+        
     }
+    alert("Se desplegaron los Jugadores por consola")
 }
 
 
