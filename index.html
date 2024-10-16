@@ -4,65 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PadelPlanner</title>
-     <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style.css">
 </head>
 <body>
     <header>
         <div class="logo">
             <img src="./src/Padel-ICon-removebg-preview.png" alt="PadelPlanner">
-          </div>
-          <nav>
+        </div>
+        <nav>
             <ul>
-              <li><a href="#inicio">Inicio</a></li>
-              <li><a href="#torneos">Torneos</a></li>
-              <li><a href="#resultados">Resultados</a></li>
-              <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#torneos">Torneos</a></li>
+                <li><a href="#resultados">Resultados</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
-          </nav>
+        </nav>
     </header>
     <main>
         <section id="crear-torneo" class="crea-torneo">
             <h2>Crea tu Torneo</h2>
-            <form >
-                <input type="text" name="categoria" placeholder="Categoria" required>
-                <input type="number" name="canchas" placeholder="Número de canchas" required>
-                <input type="number" name="parejas" placeholder="Cantidad de parejas" required>
-                <input type="number" id="cantidad-fechas" name="fechas" placeholder="Cantidad de fechas" required>
-                <input type="number" name="prom-partido" placeholder="Promedio tiempo por partido en MIN" required>
-                
-                
+            <form id="torneo-data">
+                <select id="categoria" name="categoria">
+                    <option value="">--Selecciona una categoría--</option>
+                    <option value="8va">8va</option>
+                    <option value="7ma">7ma</option>
+                    <option value="6ta">6ta</option>
+                    <option value="5ta">5ta</option>
+                    <option value="4ta">4ta</option>
+                    <option value="3ra">3ra</option>
+                    <option value="2da">2da</option>
+                    <option value="1ra">1ra</option>
+                    <option value="Suma8">Suma 8</option>
+                    <option value="Suma12">Suma 12</option>
+                    <option value="Suma14">Suma 14</option>
+                    <option value="Suma15">Suma 15</option>
+                </select>
+                <input type="date" id="fecha-torneo" name="fecha-torneo" placeholder="Ingrese la fecha del torneo" required>
+                <input type="time" id="desde-hora-torneo" name="hora-torneo" placeholder="Ingrese hora de Comienzo" required>
+                <input type="time" id="hasta-hora-torneo" name="hora-torneo" placeholder="Ingrese hora de Final" required>
+                <input type="number" id="canchas" name="canchas" placeholder="Número de canchas" required>
+                <input type="number" id="parejas" name="parejas" placeholder="Cantidad de parejas" required>
+                <input type="number" id="prom-partidos" name="prom-partido" placeholder="Promedio tiempo por partido en MIN" required>
                 <button type="submit">Generar Torneo</button>
             </form>
         </section>
-        <section   class="fecha-torneo">
-            <form id="fechas-juego" >
-
-               
-            </form>
-
-
+        <section class="fecha-torneo">
+            <form id="fechas-juego"></form>
         </section>
         <section class="ingresar-parejas">
             <h2>Ingresa las parejas</h2>
-            <form id="ingresa-jugador">
-              
-            </form>
+            <form id="ingresa-jugador"></form>
         </section>
         <section class="tabla-jugadores">
             <p>Lista de Jugadores</p>
             <section id="grilla-jugadores" class="grilla-jugadores">
-               
-                <div class="header renglon-lista ">
-                    <p class="idJug ">ID</p>
+                <div class="header renglon-lista">
+                    <p class="idJug">ID</p>
                     <p>Jugadores</p>
-                    
-                    
+                    <p class="zona">Zona</p>
                 </div>
-              
             </section>
         </section>
-        <div id="grilla-zonas"></div>
-
+        <section id="lasZonas" class="tabla-jugadores">
+            
+        </section>
+        
     </main>
     <footer></footer>
     <script src="./js/index.js"></script>
