@@ -161,6 +161,7 @@ header {
               align-self: center;
               
             }
+            
             button{
               border-radius: 20px;
               background-color: #ffffff;
@@ -181,6 +182,13 @@ header {
                   padding: 5px;
                   font-family: "Poppins" ;
                   color: #ffffff;
+              }
+              .alerta{
+                color: red;
+                text-align: start;
+                padding: 5px;
+                font-weight:500;
+                
               }
               select{
                 background-color: #000000;

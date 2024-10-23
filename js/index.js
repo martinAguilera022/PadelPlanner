@@ -50,23 +50,39 @@ function capturarDatosTorneo(event) {
     const tiempoPartido = parseInt(document.getElementById('prom-partidos').value);
     const desdeHora = document.getElementById('desde-hora-torneo').value;
     const hastaHora = document.getElementById('hasta-hora-torneo').value;
+    let alertaError = document.getElementById('alerta-torneo');
+    alertaError.innerHTML = ''; 
 
+
+    const nuevaAlerta= document.createElement('p')
+    nuevaAlerta.classList.add('alerta');
+    
+    if (nombre === "" || fecha === "" || isNaN(cantidadParejas) || cantidadParejas <= 0 || isNaN(tiempoPartido) || tiempoPartido <= 0 || desdeHora === "" || hastaHora === ""){
+            nuevaAlerta.textContent = "Porfavor complete todos lo campos."
+            alertaError.appendChild(nuevaAlerta);
+            return null;
+        }
      
-     if (cantidadParejas < 2 || cantidadParejas > 32 || isNaN(cantidadParejas)) {
-        alert('La cantidad de parejas debe estar entre 2 y 32.');
+    if (cantidadParejas < 2 || cantidadParejas > 32 || isNaN(cantidadParejas)) {
+        nuevaAlerta.textContent = ('La cantidad de parejas debe estar entre 2 y 32.');
+        alertaError.appendChild(nuevaAlerta);
         return null;
     }
     
   
 
     if (tiempoPartido < 10 || tiempoPartido > 120 || isNaN(tiempoPartido)) {
-        alert('El tiempo de partido debe estar entre 10 y 120 minutos.');
+        nuevaAlerta.textContent = ('El tiempo de partido debe estar entre 10 y 120 minutos.');
+        alertaError.appendChild(nuevaAlerta);
+        
         return null;
     }
 
    
     if (!desdeHora || !hastaHora || desdeHora >= hastaHora) {
-        alert('La hora de inicio debe ser menor que la hora de finalización.');
+        nuevaAlerta.textContent = ('La hora de inicio debe ser menor que la hora de finalización.');
+        alertaError.appendChild(nuevaAlerta);
+        
         return null;
     }
     
@@ -86,7 +102,9 @@ function capturarDatosTorneo(event) {
 
     
     if (duracionMinutos < 300) {
-        alert('El torneo debe tener una duración mínima de 5 horas.');
+        nuevaAlerta.textContent = ('El torneo debe tener una duración mínima de 5 horas.');
+        alertaError.appendChild(nuevaAlerta);
+        
         return null;
     }
     
@@ -194,6 +212,9 @@ function crearFormularioJugadores(horarios) {
          <select id="horaSelect" placeholder="Elige un horario">
          
          </select>
+         <div id="alerta-pareja">
+         
+         </div>
          <button type="submit" id="submit-pareja-data">Cargar pareja</button>
     `;
    
@@ -241,12 +262,25 @@ function ingresarJugadores(torneoData, horarios) {
     
         let jugador1 = document.getElementById('jugador1').value;
         let jugador2 = document.getElementById('jugador2').value;
-        
+        let alertaError = document.getElementById('alerta-pareja');
+        alertaError.innerHTML = ''; 
+
+
+        const nuevaAlerta= document.createElement('p')
+        nuevaAlerta.classList.add('alerta');
+        if(jugador1 == "" || jugador2 === ""){
+            
+            nuevaAlerta.textContent = "Complete los campos de jugador";
+            alertaError.appendChild(nuevaAlerta);
+            return;
+        }
        
        
         let horaSeleccionada  = selectHorarios.value;
         if (horaSeleccionada === "") {
-            alert('Por favor, selecciona un horario válido.');
+            
+            nuevaAlerta.textContent = "Por favor, selecciona un horario válido.";
+            alertaError.appendChild(nuevaAlerta);
             return; 
         }
 
