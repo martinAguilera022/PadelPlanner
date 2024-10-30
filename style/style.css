@@ -37,6 +37,101 @@ body {
   background-color: #000000;
   font-size: 15px; }
 
+.container {
+  padding: 50px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
+h1 {
+  text-align: center;
+  color: #0BE2A7; }
+
+.tournament-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 80%;
+  height: 100vh;
+  background-color: #2e2d2d;
+  border-radius: 20px;
+  margin: 20px;
+  margin-top: 0; }
+  .tournament-list .sin-torneos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    font-size: 18px;
+    box-shadow: #fff 1px; }
+
+.mostrar-cruces {
+  border-radius: 20px;
+  background-color: #2e2d2d;
+  width: 40%;
+  color: #000;
+  height: 100vh; }
+  .mostrar-cruces .zona {
+    background-color: #0BE2A7;
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px; }
+    .mostrar-cruces .zona .partido {
+      display: flex;
+      justify-content: center;
+      width: 100%; }
+  .mostrar-cruces p {
+    border: 2px solid white;
+    width: 100%;
+    padding: 10px; }
+
+.tournament-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  transition: transform 0.2s;
+  text-align: start; }
+  .tournament-card h2 {
+    margin: 0 0 10px;
+    color: #0BE2A7; }
+  .tournament-card p {
+    margin: 5px 0;
+    color: #555; }
+  .tournament-card .btn {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 15px;
+    background-color: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-weight: 800;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.2s; }
+    .tournament-card .btn:hover {
+      color: #000;
+      background-color: #ffffff;
+      box-shadow: 5px 5px 5px #3c3c3c;
+      transform: translateY(-5px); }
+  .tournament-card .borrar-torneo {
+    color: white;
+    background-color: #fd1c1c; }
+    .tournament-card .borrar-torneo:hover {
+      color: red;
+      background-color: white;
+      box-shadow: 5px 5px 5px #3c3c3c;
+      transform: translateY(-5px); }
+  .tournament-card:hover {
+    transform: translateY(-5px);
+    background-color: #0BE2A7;
+    color: #555; }
+    .tournament-card:hover h2 {
+      color: #fff; }
+
 .tabla-jugadores {
   justify-content: center;
   font-size: 12px; }
@@ -88,7 +183,8 @@ body {
     justify-content: space-between;
     width: 100%;
     max-width: 1200px;
-    height: 100%; }
+    height: 100%;
+    border-radius: 20px; }
     .tabla-zonas .zona .datos-zona {
       display: flex;
       flex-direction: row;
@@ -101,6 +197,23 @@ body {
         width: 80%; }
       .tabla-zonas .zona .datos-zona .horario {
         width: 20%; }
+  .tabla-zonas .texto-exitoso {
+    color: #04ea04;
+    font-weight: 800; }
+  .tabla-zonas #guardarTorneo {
+    border-radius: 20px;
+    background-color: #0BE2A7;
+    font-family: "Poppins";
+    padding: 20px;
+    width: auto;
+    color: #ffffff; }
+  .tabla-zonas button {
+    border-radius: 20px;
+    background-color: #0BE2A7;
+    font-family: "Poppins";
+    padding: 20px;
+    width: auto;
+    color: #ffffff; }
 
 .fechas-torneo {
   display: flex;
@@ -129,6 +242,10 @@ section {
     display: flex;
     flex-direction: column;
     padding: 10px; }
+    section form .placeholder {
+      text-align: start;
+      margin: 5px;
+      margin-left: 10px; }
     section form input {
       background-color: #00000030;
       margin: 5px;

@@ -13,10 +13,9 @@
         </div>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#torneos">Torneos</a></li>
-                <li><a href="#resultados">Resultados</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio">Crear Torneos</a></li>
+                <li><a href="./pages/misTorneos.html">Mis Torneos</a></li>
+                
             </ul>
         </nav>
     </header>
@@ -24,7 +23,9 @@
         <section id="crear-torneo" class="crea-torneo">
             <h2>Crea tu Torneo</h2>
             <form id="torneo-data">
-                <select id="categoria" name="categoria">
+                
+                <input type="text" for="nombre-torneo" id="nombre-torneo" placeholder="Ingrese el nombre del Torneo">
+                <select class="input-container" id="categoria" name="categoria">
                     <option value="">--Selecciona una categoría--</option>
                     <option value="8va">8va</option>
                     <option value="7ma">7ma</option>
@@ -39,9 +40,12 @@
                     <option value="Suma14">Suma 14</option>
                     <option value="Suma15">Suma 15</option>
                 </select>
-                <input type="date" id="fecha-torneo" name="fecha-torneo" placeholder="Ingrese la fecha del torneo" required>
-                <input type="time" id="desde-hora-torneo" name="hora-torneo" placeholder="Ingrese la hora de inicio del torneo (HH:MM):" required>
-                <input type="time" id="hasta-hora-torneo" name="hora-torneo" placeholder="Ingrese la hora de finalización del torneo (HH:MM):" required>
+                <input class="input-container" type="date" id="fecha-torneo" name="fecha-torneo" placeholder="Ingrese la fecha del torneo" required>
+
+                <label class="placeholder" for="hora-torneo-desde">Hora de inicio del torneo:</label>
+                <input class="input-container" type="time" id="desde-hora-torneo" name="hora-torneo-desde" required>
+                <label class="placeholder" for="hora-torneo-desde">Hora de finalización del torneo:</label>
+                <input  class="input-container" type="time" id="hasta-hora-torneo" name="hora-torneo-hasta"  required>
                
                 <input type="number" id="parejas" name="parejas" placeholder="Ingrese la cantidad de parejas (entre 2 y 32):" required>
                 <input type="number" id="prom-partidos" name="prom-partido" placeholder="Ingrese el tiempo promedio de los partidos en minutos (entre 10 y 120):" required>
@@ -64,11 +68,13 @@
                
             </section>
         </section>
+        
         <section id="lasZonas" class="tabla-zonas">
             
          
 
         </section>
+        
         
     </main>
     <footer></footer>
