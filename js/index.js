@@ -34,9 +34,9 @@ botonTorneoData.addEventListener("click", function (event) {
 	nuevaAlerta.classList.add("alerta");
 
 	torneoData = capturarDatosTorneo(event);
-	
+
 	horarios = crearOpcionesHora(torneoData);
-	
+
 	if (horarios.length < zonaDeTres + zonaDeCuatro) {
 		nuevaAlerta.textContent =
 			"El rango horario no es suficiente para los partidos";
@@ -48,7 +48,7 @@ botonTorneoData.addEventListener("click", function (event) {
 		return null;
 	} else {
 		formularioTorneoData.innerHTML = "";
-		
+
 		crearFormularioJugadores(horarios);
 	}
 });
@@ -149,7 +149,6 @@ function capturarDatosTorneo(event) {
 
 	zonaDeTres = totalZonasDeTres;
 	zonaDeCuatro = totalZonasDeCuatro;
-	
 
 	let [horaInicio, minutoInicio] = desdeHora.split(":").map(Number);
 	let [horaFin, minutoFin] = hastaHora.split(":").map(Number);
@@ -183,9 +182,9 @@ function mostrarJugadoresCargados() {
 
 	btonCrearZona.addEventListener("click", function (event) {
 		let zonas = agruparZona(parejas);
-		
+
 		let cruces = agruparZona(generarCruces(zonas));
-		
+
 		grillaJugadores.innerHTML = "";
 		mostrarCruces(cruces);
 		const contenedorZonas = document.getElementById("lasZonas");
@@ -198,21 +197,29 @@ function mostrarJugadoresCargados() {
 
 		btonGuardarTorneo.addEventListener("click", function (event) {
 			let esteTorneo = { index, torneoData, cruces };
-			
 
 			losTorneos.push(esteTorneo);
 
 			localStorage.setItem("torneoGuardado", JSON.stringify(losTorneos));
 
 			crearTextoTorneoGuardado = document.createElement("p");
+			Swal.fire({
+				title: "Torneo Guardado Exitosamente!.",
+				text: "El torneo ya esta guardado en tus torneos.",
+				icon: "success",
+				confirmButtonText: "Ok.",
+				background:"#000000",
+				iconColor:" #0BE2A7",
+				color: "#ffff",
+				confirmButtonColor: "#0BE2A7"
+			});
 
-			crearTextoTorneoGuardado.innerText = "Torneo Guardado Exitosamente!.";
 			crearGuardarTorneo.removeAttribute("id");
 
 			crearGuardarTorneo.innerText = "Ver Torneos";
 			crearGuardarTorneo.id = "verTorneos";
 			crearTextoTorneoGuardado.classList.add("texto-exitoso");
-			contenedorZonas.appendChild(crearTextoTorneoGuardado);
+
 			contenedorZonas.appendChild(crearGuardarTorneo);
 
 			crearGuardarTorneo.addEventListener("click", function () {
@@ -316,7 +323,7 @@ function crearFormularioJugadores(horarios) {
 	selectHorarios.add(defaultOption);
 
 	totalZonas = zonaDeTres + zonaDeCuatro;
-	
+
 	for (i = 0; i < totalZonas; i++) {
 		hora = horarios[i];
 		const opcionHora = document.createElement("option");
@@ -336,7 +343,8 @@ function crearFormularioJugadores(horarios) {
 	btonFormularioPareja.addEventListener("click", function (event) {
 		event.preventDefault();
 		ingresarJugadores(torneoData, horarios);
-		console.log(parejas);
+
+		
 	});
 }
 
@@ -387,11 +395,9 @@ function ingresarJugadores(torneoData, horarios) {
 			zonaDeCuatro = zonaDeCuatro - 1;
 		}
 	} else if (contadorZonas[horaSeleccionada] === 3) {
-		
 		selectHorarios.options[selectedIndex].disabled = true;
 	}
 
-	
 	if (parejasIngresadas >= torneoData.cantidadParejas) {
 		formularioParejas.innerHTML = ``;
 		mostrarJugadoresCargados();
@@ -401,6 +407,20 @@ function ingresarJugadores(torneoData, horarios) {
 		document.getElementById("jugador2").value = "";
 		selectHorarios.selectedIndex = 0;
 	}
+	Toastify({
+		text: "Pareja Cargada",
+		
+		duration: 3000,
+		position: "right",
+		backgroundColor: "#0BE2A7", 
+		stopOnFocus: true,
+		style: {
+			color: "#ffffff",
+			fontSize: "16px", 
+			fontWeight: "bold" 
+		}
+
+	}).showToast();
 }
 
 function agruparZona(parejas) {

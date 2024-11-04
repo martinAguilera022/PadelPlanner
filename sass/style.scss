@@ -91,7 +91,8 @@ header {
     background-color: #2e2d2d;
     width: 40%;
     color: #000;
-    height: 100vh;
+    min-height: 100vh;
+    height: max-content;
     .zona{
       background-color: #0BE2A7;
       padding: 10px;
@@ -378,3 +379,7 @@ header {
             color: #5f5e5e;
             margin-bottom: 10px;
           }
+          .my-confirm-button {
+            color: #000000;      /* Cambia el color del texto del botón de confirmación */
+            background-color: #ffffff;  /* Fondo negro */
+        }

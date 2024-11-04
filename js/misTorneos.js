@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 	let torneosGuardados = localStorage.getItem("torneoGuardado");
 	torneosGuardados = JSON.parse(torneosGuardados) || [];
-	
 
 	mostrarTorneos(torneosGuardados);
 
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
 					<p><strong>Fecha: </strong> ${esteTorneo.fecha}</p>
 					<p><strong>Hora: </strong>${esteTorneo.desdeHora}</p>
 					<p><strong>Categoría: </strong>${esteTorneo.categoria}</p>
-					
+					<p><strong>Parejas: </strong>${esteTorneo.cantidadParejas}</p>
 					<button id="${index}" class="btn ver-partidos">Ver Partidos</button>
 					<button id="${index}" class="borrar-torneo btn">Borrar torneo</button>
 				</div>
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.querySelectorAll(".ver-partidos").forEach((boton) => {
 			boton.addEventListener("click", function () {
 				const idTorneo = this.id;
-				
+
 				const torneoSeleccionado = torneosGuardados[idTorneo];
 				mostrarPartidos(torneoSeleccionado.cruces);
 			});
@@ -40,19 +39,50 @@ document.addEventListener("DOMContentLoaded", function () {
 		document.querySelectorAll(".borrar-torneo").forEach((boton) => {
 			boton.addEventListener("click", function () {
 				const idTorneo = this.id;
-				
-				torneosGuardados.splice(idTorneo, 1);
 
-				for (let i = 0; i < torneosGuardados.length; i++) {
-					torneosGuardados[i].index = i;
-				}
+			
 
-				localStorage.setItem(
-					"torneoGuardado",
-					JSON.stringify(torneosGuardados)
-				);
-				mostrarTorneos(torneosGuardados);
-				document.getElementById("lasZonas").innerHTML = "";
+				Swal.fire({
+					title: "Quieres eliminar este torneo?",
+					text: "No vas a poder revertir este cambio!",
+					icon: "warning",
+					showCancelButton: true,
+					confirmButtonColor: "#0BE2A7",
+					
+					confirmButtonText: "Si, eliminar!",
+					background:"#000000",
+					iconColor:" #0BE2A7",
+					color: "#ffff",
+					customClass: {
+						cancelButton: 'my-confirm-button'
+					},
+				}).then((result) => {
+					if (result.isConfirmed) {
+						Swal.fire({
+							title: "Torneo Eliminado con Exito",
+							text: "",
+							icon: "success",
+							background:"#000000",
+							iconColor:" #0BE2A7",
+							color: "#ffff",
+							confirmButtonColor: "#0BE2A7",
+					
+						});
+						torneosGuardados.splice(idTorneo, 1);
+						for (let i = 0; i < torneosGuardados.length; i++) {
+							torneosGuardados[i].index = i;
+						}
+
+						localStorage.setItem(
+							"torneoGuardado",
+							JSON.stringify(torneosGuardados)
+						);
+						mostrarTorneos(torneosGuardados);
+						document.getElementById("lasZonas").innerHTML = "";
+					} else if (result.isDenied) {
+						Swal.fire("Torneo no Eliminado!", "", "info");
+					}
+				});
 			});
 		});
 	}
