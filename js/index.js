@@ -122,7 +122,7 @@ function capturarDatosTorneo(event) {
 		return null;
 	}
 
-	if (cantidadParejas < 2 || cantidadParejas > 32 || isNaN(cantidadParejas)) {
+	if (cantidadParejas < 6 || cantidadParejas > 32 || isNaN(cantidadParejas)) {
 		nuevaAlerta.textContent = "La cantidad de parejas debe estar entre 2 y 32.";
 		alertaError.appendChild(nuevaAlerta);
 		return null;
@@ -205,26 +205,22 @@ function mostrarJugadoresCargados() {
 			crearTextoTorneoGuardado = document.createElement("p");
 			Swal.fire({
 				title: "Torneo Guardado Exitosamente!.",
-				text: "El torneo ya esta guardado en tus torneos.",
+				text: "El torneo ya esta guardado en la seccion MIS TORNEOS.",
 				icon: "success",
 				confirmButtonText: "Ok.",
-				background:"#000000",
-				iconColor:" #0BE2A7",
+				background: "#000000",
+				iconColor: " #0BE2A7",
 				color: "#ffff",
-				confirmButtonColor: "#0BE2A7"
-			});
+				confirmButtonColor: "#0BE2A7",
+			}).then((result) => {
+				if (result.isConfirmed) {
+					location.reload();
+				}
+			  });
+			
 
-			crearGuardarTorneo.removeAttribute("id");
-
-			crearGuardarTorneo.innerText = "Ver Torneos";
-			crearGuardarTorneo.id = "verTorneos";
-			crearTextoTorneoGuardado.classList.add("texto-exitoso");
-
-			contenedorZonas.appendChild(crearGuardarTorneo);
-
-			crearGuardarTorneo.addEventListener("click", function () {
-				window.location.href = "./pages/misTorneos.html";
-			});
+			
+			
 		});
 	});
 }
@@ -343,8 +339,6 @@ function crearFormularioJugadores(horarios) {
 	btonFormularioPareja.addEventListener("click", function (event) {
 		event.preventDefault();
 		ingresarJugadores(torneoData, horarios);
-
-		
 	});
 }
 
@@ -409,17 +403,16 @@ function ingresarJugadores(torneoData, horarios) {
 	}
 	Toastify({
 		text: "Pareja Cargada",
-		
+
 		duration: 3000,
 		position: "right",
-		backgroundColor: "#0BE2A7", 
+		backgroundColor: "#0BE2A7",
 		stopOnFocus: true,
 		style: {
 			color: "#ffffff",
-			fontSize: "16px", 
-			fontWeight: "bold" 
-		}
-
+			fontSize: "16px",
+			fontWeight: "bold",
+		},
 	}).showToast();
 }
 

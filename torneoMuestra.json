@@ -1,0 +1,43 @@
+[
+    {
+        "torneoData": {
+        "nombre": "Torneo de Ejemplo JSON",
+        "fecha": "2024-11-15",
+        "desdeHora": "10:00",
+        "categoria": "6ta",
+        "cantidadParejas": 18
+        },
+        "cruces": {
+            "1": [
+            { "partido": "Jorge Lopez - Javier Gonzalez VS Juan Perez - Martin Rodriguez", "horario": "10:00" },
+            { "partido": "Jorge Lopez - Javier Gonzalez VS Ricardo Jimenez - Gerardo Lima", "horario": "10:40" },
+            { "partido": "Ricardo Jimenez - Gerardo Lima VS Juan Perez - Martin Rodriguez", "horario": "11:20" }
+            ],
+            "2": [
+            { "partido": "Martin Barrera - Gino Alvarez VS Ramiro Decima - Manuel Gutierrez", "horario": "12:00" },
+            { "partido": "Martin Barrera - Gino Alvarez VS Hugo Campos - Matias Romero", "horario": "12:40" },
+            { "partido": "Hugo Campos - Matias Romero VS Ramiro Decima - Manuel Gutierrez", "horario": "13:20" }
+            ],
+            "3": [
+            { "partido": "Carlos Gomez - Luis Medina VS Fernando Cruz - Diego López", "horario": "14:00" },
+            { "partido": "Carlos Gomez - Luis Medina VS Marcelo Reyes - Adrian Morales", "horario": "14:40" },
+            { "partido": "Fernando Cruz - Diego López VS Marcelo Reyes - Adrian Morales", "horario": "15:20" }
+            ],
+            "4": [
+            { "partido": "Esteban Pérez - Gabriel Ortega VS José Torres - Alberto García", "horario": "16:00" },
+            { "partido": "Esteban Pérez - Gabriel Ortega VS Roberto Ruiz - Pablo Vidal", "horario": "16:40" },
+            { "partido": "José Torres - Alberto García VS Roberto Ruiz - Pablo Vidal", "horario": "17:20" }
+            ],
+            "5": [
+            { "partido": "Francisco López - Andrés Soto VS Juan Medina - Rodrigo Sánchez", "horario": "18:00" },
+            { "partido": "Francisco López - Andrés Soto VS Javier Mora - Iván Pérez", "horario": "18:40" },
+            { "partido": "Juan Medina - Rodrigo Sánchez VS Javier Mora - Iván Pérez", "horario": "19:20" }
+            ],
+            "6": [
+            { "partido": "David García - Enrique López VS Manuel Núñez - Guillermo Pérez", "horario": "20:00" },
+            { "partido": "David García - Enrique López VS Alejandro Vargas - Sergio Sánchez", "horario": "20:40" },
+            { "partido": "Manuel Núñez - Guillermo Pérez VS Alejandro Vargas - Sergio Sánchez", "horario": "21:20" }
+            ]
+        }
+    }
+]

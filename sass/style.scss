@@ -126,8 +126,61 @@ header {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
+      
+        .zona{
+          background-color: #0BE2A7;
+          padding: 10px;
+          border-radius: 20px;
+          margin-bottom: 10px;
+          .partido{
+            display: flex;
+            justify-content: center;
+            width: 100%;
+    
+          }
+          .zona-en-torneo{
+            width: 100%;
+            p{
+              border: 2px solid rgb(255, 255, 255);
+              width: 100%;
+              padding: 10px;
+            }
+            .puntos{
+              border: 2px solid rgb(255, 255, 255);
+              width: 100%;
+              padding: 10px;
+              select{
+                color: #ffffff;
+                background-color: #0BE2A7;
+                border: none;
+                font-family: "Poppins";
+                width: auto;
+              }
+            }
+          }
+        }
+        
+      
   }
-  
+  #bton-volver{
+    background-color: #0BE2A7;
+    border-radius: 20px;
+    font-family: "Poppins";
+    padding: 20px;
+    width: auto;
+    height: min-content;
+    font-weight: 900;
+    font-size: 10px;
+    &:hover {
+      transform: translateY(-5px); 
+      background-color: #00ffbb;
+      color: #555;
+      h2{
+        color: #fff;
+      }
+  }
+
+  }
   h1 {
       text-align: center;
       color: #0BE2A7;
@@ -137,7 +190,7 @@ header {
       display: flex;
       flex-direction: column;
       gap: 20px; 
-      width: 80%;
+      width: 40%;
       height: 100vh;
       background-color: #2e2d2d ;
      
@@ -158,7 +211,7 @@ header {
   .mostrar-cruces{
     border-radius: 20px;
     background-color: #2e2d2d;
-    width: 40%;
+    width: 60%;
     color: #000;
     min-height: 100vh;
     height: max-content;
@@ -171,7 +224,9 @@ header {
         display: flex;
         justify-content: center;
         width: 100%;
-
+        .tit-zonas{
+          font-weight: 600;
+        }
       }
       
     }
@@ -229,6 +284,10 @@ header {
           transform: translateY(-5px);
 
         }
+      }
+      .iniciar-torneos{
+        background-color: #0BE2A7;
+        color:#ffffff;
       }
   
       &:hover {

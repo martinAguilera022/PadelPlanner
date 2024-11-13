@@ -6,6 +6,7 @@
     <title>PadelPlanner</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="style/style.css">
+    
 </head>
 <body>
     <header>
@@ -27,14 +28,17 @@
                 <h2>Crea Torneos y Contrólalos Fácilmente.</h2>
             </div>
         </div>
+        <section><h3>Bienvenido a  PadelPlanner</h3>
+        <p>Bienvenido a Paddle Planner! Esta herramienta está diseñada para ayudarte a crear y gestionar torneos de pádel de manera sencilla y organizada. A continuación, te explicamos cómo puedes aprovechar al máximo cada función: </p>
+        </section>
         <section class="seccion-pasos">
             <h4 class="titulo">¿Como creo mi torneo?</h4>
             <div class="pasos pasos-1"><p>1°</p>
-            <p>Primero debes ingresar los datos de tu torneo, Fecha en la que se juega, cantidad de parejas,hora de comienzo ,etc.</p></div>
+            <p>En la sección principal, puedes comenzar creando un nuevo torneo. Solo necesitas ingresar algunos detalles básicos, como el nombre del torneo, la fecha y hora, la categoría, y la cantidad de parejas. También puedes ajustar la duración de cada partido según tus preferencias.</p></div>
             <div class="pasos pasos-2"><p>2°</p>
-                <p>Debes ingresar todas las parejas que jugaran el torneo, ingresando sus nombres y seleccionando la disponibilidad horaria creada segun fue creada por los horarios de el torneo. </p></div>
+                <p>Una vez que el torneo esté creado, el sistema generará automáticamente los cruces entre las parejas, dividiéndolos en zonas y mostrando horarios basados en la disponibilidad de las parejas. </p></div>
                 <div class="pasos pasos-3"><p>3°</p>
-                    <p>Luego podras ver las zonas creadas para el torneo y sus partidos y a las horas que se jugaran. Podras almacenar los torneos y ver los en Mis Torneos.</p></div>
+                    <p>Puedes ver fácilmente los partidos programados para cada zona en la pestaña de "Mis Torneos". Los cruces se agrupan y organizan de manera visual para facilitar el seguimiento.</p></div>
         </section>
         <section id="crear-torneo" class="crea-torneo">
             <h2>Crea tu Torneo</h2>
@@ -63,7 +67,7 @@
                 <label class="placeholder" for="hora-torneo-desde">Hora de finalización del torneo:</label>
                 <input  class="input-container" type="time" id="hasta-hora-torneo" name="hora-torneo-hasta"  required>
                
-                <input type="number" id="parejas" name="parejas" placeholder="Ingrese la cantidad de parejas (entre 2 y 32):" required>
+                <input type="number" id="parejas" name="parejas" placeholder="Ingrese la cantidad de parejas (entre 6 y 32):" required>
                 <input type="number" id="prom-partidos" name="prom-partido" placeholder="Ingrese el tiempo promedio de los partidos en minutos (entre 10 y 120):" required>
                 <div id="alerta-torneo"></div>
                 <button id="submit-torneo-data" type="submit">Generar Torneo</button>
@@ -94,6 +98,9 @@
         
     </main>
     <footer></footer>
+    
+    <script type="text/javascript" src="jquery-1.6.2.min.js"></script>
+    
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/index.js"></script>
